@@ -1,12 +1,28 @@
 //pagewrapper
-const pageWrapper = document .createElement('div');
+const PageWrapper = document .createElement('div');
+document.body.appendChild(PageWrapper);
 
-document.body.appendChild(pageWrapper);
+//creating input 
+const FirstInput =document.createElement('input');
+PageWrapper.appendChild(FirstInput);
 
-const button = document.querySelector('button');
-button.addEventListener('click',showInput);
+//creating add button
+const AddButton = document.createElement('button');
+PageWrapper.appendChild(AddButton);
+AddButton.innerHTML="Add"
 
-function showInput(){
-    const  myInput = document.querySelector('input');
-    console.log(myInput.value);
+//creting list
+const Ul = document.createElement('ul');
+PageWrapper.appendChild(Ul);
+
+//creating listen eventer
+AddButton.addEventListener('click',READ_WRITE);
+
+//creating funtion
+function READ_WRITE(){
+    const Inside_list =document.createElement('li');
+    Ul.appendChild(Inside_list);
+    Inside_list.innerHTML = FirstInput.value
 }
+//console.log
+FirstInput.value=""
